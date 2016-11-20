@@ -11,7 +11,9 @@ int main() {
   // Read Command Line Input
   printf("What would you like to do?\n");
   char input[100]; // Raw input
-  fgets(input, 99, stdin);
+  fgets(input, 100, stdin);
+  if (input[strlen(input) - 1] == '\n')
+    input[strlen(input) - 1] = 0; // removing newline
 
   char * command[20];
   char * iter = input;
